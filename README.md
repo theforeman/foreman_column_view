@@ -44,6 +44,7 @@ only read at startup.
 # TODO
 
 * Add plugin settings to the Settings UI
+* Make the column sortable
 * Choose where to display the column
 * Support multiple additional columns
 * Support adding data to other pages
