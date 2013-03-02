@@ -1,10 +1,12 @@
 # foreman\_column\_view
 
-Adds a custom column to the Hosts list view.
+A small plugin to showcase the awesome [Deface](https://github.com/spree/deface)
+library. It simply adds a column to the Hosts list. It also serves as a simple example
+of including a new Helper in the plugin.
 
 # Installation
 
-Then require the gem in Foreman, and also Deface to `bundler.d/Gemfile.local.rb`:
+Require the gem in Foreman, and also Deface, in `bundler.d/Gemfile.local.rb`:
 
 ```yaml
 gem 'deface', '0.7.2'

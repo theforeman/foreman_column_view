@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
-    "README.md"
+    "README.md",
     "Rakefile",
     "VERSION",
     "app/helpers/foreman_column_view/hosts_helper.rb",
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
     "app/overrides/add_column_title.rb",
     "foreman_column_view.gemspec",
     "lib/foreman_column_view.rb",
-    "lib/foreman_column_view/engine.rb",
+    "lib/foreman_column_view/engine.rb"
   ]
   s.homepage = "http://github.com/GregSutcliffe/foreman_column_view"
   s.licenses = ["GPL-3"]
