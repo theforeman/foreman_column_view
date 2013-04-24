@@ -1,3 +1,4 @@
+require 'deface'
 require 'foreman_column_view'
 
 module ForemanColumnView
