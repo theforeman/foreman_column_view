@@ -1,0 +1,6 @@
+*~
+.bundle
+Gemfile.lock
+.rbenv*
+.rvmrc*
+.ruby-version
