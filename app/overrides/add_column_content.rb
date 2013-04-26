@@ -1,4 +1,11 @@
-Deface::Override.new(:virtual_path => "hosts/_list", 
-                     :name => "add_column_content",
-                     :insert_after => "td:contains('report')",
-                     :text => "\n      <td class=\"hidden-tablet hidden-phone\"><%= fcv_content host %></td>")
+if SETTINGS[:column_view]
+  SETTINGS[:column_view].keys.sort.map do |k|
+    after = SETTINGS[:column_view][k.to_sym][:after]
+    Deface::Override.new(
+      :virtual_path => "hosts/_list",
+      :name => "content_#{k}",
+      :insert_after => "td:contains('#{after}')",
+      :text => "\n    <td class=\"hidden-tablet hidden-phone\"><%= fcv_content host, '#{k}' %></td>"
+    )
+  end
+end

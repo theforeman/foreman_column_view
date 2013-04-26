@@ -24,8 +24,14 @@ massively useful. To set your own choice of column, add this to Foreman's config
 
 ```yaml
 :column_view:
-  :title: Shortname
-  :content: shortname
+  :name1:
+    :title: Shortname1
+    :after: last_report
+    :content: shortname1
+  :name2:
+    :title: Shortname2
+    :after: name1
+    :content: facts_hash['shortname2']
 ```
 
 `title` is an arbitrary string which is displayed as the column header. `content` is
@@ -34,8 +40,14 @@ as well:
 
 ```yaml
 :column_view:
-  :title: Uptime
-  :content: facts_hash['uptime']
+  :architecture:
+    :title: Architecture
+    :after: last_report
+    :content: facts_hash['architecture']
+  :uptime:
+    :title: Uptime
+    :after: architecture
+    :content: facts_hash['uptime']
 ```
 
 You will need to restart Foreman for changes to take effect, as the `settings.yaml` is
@@ -45,8 +57,6 @@ only read at startup.
 
 * Add plugin settings to the Settings UI
 * Make the column sortable
-* Choose where to display the column
-* Support multiple additional columns
 * Support adding data to other pages
 
 # Copyright
