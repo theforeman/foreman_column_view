@@ -6,8 +6,14 @@ class Setting::ColumnView < ::Setting
 
     Setting.transaction do
       [
-        self.set('column_title', "Title to display on the new column", "Domain" ),
-        self.set('column_content', "Method to send to @host for the column content", "domain" ),
+        self.set('column_view', "Hash of columns to display",
+                  { :architecture =>
+                    { :title => 'Architecture',
+                      :after => 'last_report',
+                      :content => "facts_hash['architecture']"
+                    }
+                  }
+                )
       ].compact.each { |s| self.create s.update(:category => "Setting::ColumnView")}
     end
 
