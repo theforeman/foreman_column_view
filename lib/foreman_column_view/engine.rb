@@ -8,6 +8,9 @@ module ForemanColumnView
 
     initializer 'foreman_column_view.helper' do |app|
       ActionView::Base.send :include, ForemanColumnView::HostsHelper
+
+      # Extend core HostHelper to add rows to Properties on hosts/show
+      ::HostsHelper.send :include, ForemanColumnView::HostsHelperExtension
     end
 
   end
