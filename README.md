@@ -1,8 +1,8 @@
 # foreman\_column\_view
 
 A small plugin to showcase the awesome [Deface](https://github.com/spree/deface)
-library. It simply adds a column to the Hosts list. It also serves as a simple example
-of including a new Helper in the plugin.
+library. It simply adds a column to the Hosts list or properties table. It also
+serves as a simple example of including a new Helper in the plugin.
 
 # Installation
 
@@ -48,6 +48,19 @@ as well:
     :title: Uptime
     :after: architecture
     :content: facts_hash['uptime']
+```
+
+Additional rows can also be added to the Properties table on the host page by setting
+`:view: hosts_properties`.  The position is also controlled by `:after` using either a
+numeric index to represent the row or the name of the previous row (however this will
+not work well when the Foreman language is switched).  An example configuration:
+
+```yaml
+  :uptime:
+    :title: Uptime
+    :after: 6
+    :content: facts_hash['uptime']
+    :view: :hosts_properties
 ```
 
 You will need to restart Foreman for changes to take effect, as the `settings.yaml` is
