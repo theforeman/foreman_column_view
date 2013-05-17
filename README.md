@@ -9,7 +9,6 @@ of including a new Helper in the plugin.
 Require the gem in Foreman, and also Deface, in `bundler.d/Gemfile.local.rb`:
 
 ```yaml
-gem 'deface', '0.7.2'
 gem 'foreman_column_view', :git => "https://github.com/GregSutcliffe/foreman_column_view.git"
 ```
 

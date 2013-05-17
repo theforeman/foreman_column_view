@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "GPL-3"
   gem.summary = %Q{Column View Plugin for Foreman }
   gem.description = %Q{Displays an additional column in the Foreman Hosts view}
-  gem.email = "greg.sutclif@gmail.com"
+  gem.email = "greg.sutcliffe@gmail.com"
   gem.authors = ["Greg Sutcliffe"]
   # dependencies defined in Gemfile
 end

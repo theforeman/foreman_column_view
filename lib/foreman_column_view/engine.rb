@@ -1,4 +1,5 @@
 require 'foreman_column_view'
+require 'deface'
 
 module ForemanColumnView
   #Inherit from the Rails module of the parent app (Foreman), not the plugin.

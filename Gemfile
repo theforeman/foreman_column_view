@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-# Add dependencies here.
+gem 'deface'
 
 group :development do
   gem "bundler"
