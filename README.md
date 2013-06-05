@@ -62,6 +62,26 @@ not work well when the Foreman language is switched).  An example configuration:
     :view: :hosts_properties
 ```
 
+If you need to add information not readily available in a host, you can add information that
+will be evaluated on runtime by adding `:eval_content: true` to your additional row.
+Also, some times you do not want to show the additional row if a certain condition is not met,
+in order to show that row conditionally, add `:conditional: :condition_symbol` to your configuration,
+and that conditional will be executed on your host.
+
+As an example, the following yaml shows a link to a custom URL if the method host.bmc_available? is true.
+
+```yaml
+  :console:
+    :title: Console
+    :after: 0
+    :content: link_to(_("Console"), "https://#{host.interfaces.first.name}.domainname", { :class => "btn btn-info" } )
+    :conditional: :bmc_available?
+    :eval_content: true
+    :view: :hosts_properties
+```
+
+
+
 You will need to restart Foreman for changes to take effect, as the `settings.yaml` is
 only read at startup.
 

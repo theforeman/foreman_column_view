@@ -7,16 +7,20 @@ module ForemanColumnView
     # Extend core HostsHelper to add rows to Properties on hosts/show
     def overview_fields_with_fcv host
       fields = overview_fields_without_fcv(host)
+      valid_views = [:hosts_properties]
 
-      SETTINGS[:column_view].reject { |k,v| v[:view] != 'hosts_properties' }.keys.sort.map do |k|
+      SETTINGS[:column_view].reject { |k,v| !valid_views.include?(v[:view]) }.keys.sort.map do |k|
         after = SETTINGS[:column_view][k.to_sym][:after]
-        if after.is_a? Fixnum
-          after_index = after
-        else
-          # This won't work well with i18n, use row numbers instead
-          after_index = fields.find_index { |r| r[0].include? after }
-        end
-        fields.insert(after_index || -1, [fcv_title(k), fcv_content(host, k)])
+        conditional = SETTINGS[:column_view][k.to_sym][:conditional]
+        next unless (conditional.nil? || host.send(conditional))
+
+        # This won't work well with i18n, use row numbers instead
+        after = fields.find_index { |r| r[0].include? after } unless after.is_a? Fixnum
+        eval_content = SETTINGS[:column_view][k.to_sym][:eval_content]
+        content = eval_content ? eval(SETTINGS[:column_view][k.to_sym][:content]) :
+                                 fcv_content(host, k)
+
+        fields.insert(after || -1, [fcv_title(k), content])
       end
 
       fields
