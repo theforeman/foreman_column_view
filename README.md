@@ -80,6 +80,8 @@ As an example, the following yaml shows a link to a custom URL if the method hos
     :view: :hosts_properties
 ```
 
+If your conditional method needs arguments to work, the arguments should go after the method name separated by
+spaces, as in `:custom_method arg1 arg2`
 
 
 You will need to restart Foreman for changes to take effect, as the `settings.yaml` is
