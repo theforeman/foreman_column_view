@@ -6,15 +6,16 @@ serves as a simple example of including a new Helper in the plugin.
 
 # Installation
 
-Require the gem in Foreman, and also Deface, in `bundler.d/Gemfile.local.rb`:
+Require the gem in Foreman (you may need extra dependencies such as libxml or libxslt
+to build the nokogiri dependency)
 
 ```yaml
-gem 'foreman_column_view', :git => "https://github.com/GregSutcliffe/foreman_column_view.git"
+gem 'foreman_column_view'
 ```
 
 Update Foreman with the new gems:
 
-    bundle update
+    bundle update foreman_column_view
 
 # Configuration
 
