@@ -51,7 +51,7 @@ as well:
 ```
 
 Additional rows can also be added to the Properties table on the host page by setting
-`:view: hosts_properties`.  The position is also controlled by `:after` using either a
+`:view: :hosts_properties`.  The position is also controlled by `:after` using either a
 numeric index to represent the row or the name of the previous row (however this will
 not work well when the Foreman language is switched).  An example configuration:
 
