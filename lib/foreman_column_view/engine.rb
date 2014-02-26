@@ -7,6 +7,11 @@ module ForemanColumnView
   #Thus, inhereits from ::Rails::Engine and not from Rails::Engine
   class Engine < ::Rails::Engine
 
+    initializer 'foreman_column_view.register_plugin', :after=> :finisher_hook do |app|
+      Foreman::Plugin.register :foreman_column_view do
+      end if (Rails.env == "development" or defined? Foreman::Plugin)
+    end
+
     initializer 'foreman_column_view.helper' do |app|
       ActionView::Base.send :include, ForemanColumnView::HostsHelper
 
