@@ -7,8 +7,9 @@ module ForemanColumnView
     # Extend core HostsHelper to add rows to Properties on hosts/show
     def overview_fields_with_fcv host
       fields = overview_fields_without_fcv(host)
-      valid_views = [:hosts_properties]
+      return fields unless SETTINGS[:column_view]
 
+      valid_views = [:hosts_properties]
       SETTINGS[:column_view].reject { |k,v| !valid_views.include?(v[:view]) }.keys.sort.map do |k|
         after       = SETTINGS[:column_view][k.to_sym][:after]
         conditional = SETTINGS[:column_view][k.to_sym][:conditional]
