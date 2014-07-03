@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.licenses = ["GPL-3"]
   s.summary = "Column View Plugin for Foreman"
 
-  s.add_dependency "deface"
+  s.add_dependency "deface", "< 1.0"
 end
 
