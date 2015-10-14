@@ -5,7 +5,7 @@ if SETTINGS[:column_view]
       :virtual_path => "hosts/_list",
       :name => "content_#{k}",
       :insert_after => "td:contains('#{after}')",
-      :text => "\n    <td class=\"hidden-tablet hidden-phone\"><%= fcv_content host, '#{k}' %></td>"
+      :text => "\n    <td class=\"hidden-tablet hidden-phone ellipsis\"><%= fcv_content host, '#{k}' %></td>"
     )
   end
 end

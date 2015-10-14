@@ -63,6 +63,20 @@ not work well when the Foreman language is switched).  An example configuration:
     :view: :hosts_properties
 ```
 
+You can also control the width of the added column by giving a value to the `:width`
+attribute. If the width is not set, the default is set to 10%. Note that the original
+host list already has 100% width set, so adding more columns will cause other columns
+to resize, which may cause some of the table layout to break a bit. For example:
+
+```yaml
+:column_view:
+  :domain:
+    :title: Domain
+    :after: model
+    :content: domain
+    :width: 7%
+```
+
 If you need to add information not readily available in a host, you can add information that
 will be evaluated on runtime by adding `:eval_content: true` to your additional row.
 Also, some times you do not want to show the additional row if a certain condition is not met,
