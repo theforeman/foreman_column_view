@@ -20,7 +20,8 @@ Update Foreman with the new gems:
 # Configuration
 
 By default the plugin will display the Domain associated by each host. This is not
-massively useful. To set your own choice of column, add this to Foreman's config file
+massively useful. To set your own choice of column, add this to Foreman's plugin config file,
+for example /etc/foreman/plugins/foreman_column_view.yaml
 
 ```yaml
 :column_view:
@@ -35,8 +36,7 @@ massively useful. To set your own choice of column, add this to Foreman's config
 ```
 
 `title` is an arbitrary string which is displayed as the column header. `content` is
-a method call to the `Host` object, using `host.send`. You can also access `Hash` objects
-as well:
+a method call to the `Host` object, using `host.send`. You can also access `Hash` or `Params` objects:
 
 ```yaml
 :column_view:
@@ -48,6 +48,11 @@ as well:
     :title: Uptime
     :after: architecture
     :content: facts_hash['uptime']
+  :color:
+    :title: Color
+    :after: last_report
+    :content: params['favorite_color']
+
 ```
 
 Additional rows can also be added to the Properties table on the host page by setting
