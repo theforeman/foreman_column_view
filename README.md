@@ -20,8 +20,9 @@ Update Foreman with the new gems:
 # Configuration
 
 By default the plugin will display the Domain associated by each host. This is not
-massively useful. To set your own choice of column, add this to Foreman's plugin config file,
-for example /etc/foreman/plugins/foreman_column_view.yaml
+massively useful. To set your own choice of column, add this to Foreman's plugin config file 
+foreman_column_view.yaml. For package based installs this should be in 
+/etc/foreman/plugins/foreman_column_view.yaml. For source installs the directory may differ.
 
 ```yaml
 :column_view:
