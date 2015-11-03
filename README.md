@@ -37,7 +37,8 @@ foreman_column_view.yaml. For package based installs this should be in
 ```
 
 `title` is an arbitrary string which is displayed as the column header. `content` is
-a method call to the `Host` object, using `host.send`. You can also access `Hash` or `Params` objects:
+a method call to the `Host` object, using `host.send`. In these examples `facts_hash`
+and `params` are method calls to `Host` returning hash values.
 
 ```yaml
 :column_view:
