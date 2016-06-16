@@ -64,6 +64,7 @@ numeric index to represent the row or the name of the previous row (however this
 not work well when the Foreman language is switched).  An example configuration:
 
 ```yaml
+:column_view:
   :uptime:
     :title: Uptime
     :after: 6
