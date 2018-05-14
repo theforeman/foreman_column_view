@@ -4,6 +4,14 @@ A small plugin to showcase the awesome [Deface](https://github.com/spree/deface)
 library. It simply adds a column to the Hosts list or properties table. It also
 serves as a simple example of including a new Helper in the plugin.
 
+## Compatibility
+
+| Foreman Version | Plugin Version |
+| --------------- | --------------:|
+| <= 1.15         | ~> 0.3         |
+| == 1.16         | untested       |
+| >= 1.17         | ~> 0.4         |
+
 # Installation
 
 Require the gem in Foreman (you may need extra dependencies such as libxml or libxslt
