@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,extra,config,db,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
   s.homepage = "http://github.com/GregSutcliffe/foreman_column_view"
-  s.licenses = ["GPL-3"]
+  s.license = "GPL-3.0"
   s.summary = "Column View Plugin for Foreman"
 
   s.add_dependency "deface", "< 2.0"
