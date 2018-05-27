@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   ]
   s.files = Dir["{app,extra,config,db,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
-  s.homepage = "http://github.com/GregSutcliffe/foreman_column_view"
+  s.homepage = "https://github.com/theforeman/foreman_column_view"
   s.license = "GPL-3.0"
   s.summary = "Column View Plugin for Foreman"
 
