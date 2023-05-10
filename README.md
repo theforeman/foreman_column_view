@@ -1,3 +1,6 @@
+**Note**
+The plugin's functionality was integrated in Foreman itself with version 3.5, making it obsolete.
+
 # foreman\_column\_view
 
 A small plugin to showcase the awesome [Deface](https://github.com/spree/deface)
